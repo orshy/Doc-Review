@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :find_doc
   before_action :find_review, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :has_reviewed, only: [:new]
 
   def new
     @review = Review.new
@@ -47,6 +48,10 @@ class ReviewsController < ApplicationController
 
     def find_review
       @review = Review.find(params[:id])
+    end
+
+    def has_reviewed
+      redirect_to doc_path(@doc), notice: "You've already written a review for this doc!" if current_user.reviews.exists?(doc: @doc)
     end
 
 end

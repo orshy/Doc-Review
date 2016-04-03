@@ -149,6 +149,7 @@ p.alert, p.notice {
 	width: 250px;
 	margin-bottom: 40px;
 	@include background-tile;
+	background-color: #FFE;
 }
 
 .doc-show {
@@ -159,6 +160,7 @@ p.alert, p.notice {
 
 .doc-info {
 	@include background-tile;
+	background-color: #EDB;
 
 	.doc-title {
 		margin-top: 0;
