@@ -19,8 +19,12 @@
 
 <div class="row">
   <div class="col-md-4">
+    
+    <%= render @doc.reviews %>
 
-    <!-- Home for review/ratings -->
+    <div>
+      <%= link_to "Add Review", new_doc_review_path(@doc) %>
+    </div>
 
   </div>
 
