@@ -4,10 +4,14 @@
     <%= image_tag @doc.doc_img.url(:doc_show), class: "doc-show" %>
   </div>
 
+
   <div class="col-md-8">
-    <h1><%= @doc.title %></h1>
-    <h3><%= @doc.director %></h3>
-    <p><%= @doc.description %></p>
+    <h1><%= @doc.title %></h1><hr>
+    <h4>Directed by <%= @doc.director %></h4><br>
+    <div class="well">
+      <h5>Storyline</h5>
+      <p><%= @doc.description %></p>
+    </div>
   </div>
 
 

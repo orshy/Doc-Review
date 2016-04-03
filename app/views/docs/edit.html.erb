@@ -4,7 +4,7 @@
   <%= f.select :category_id, @categories %>
   <%= f.file_field :doc_img %>
   <%= f.input :title, label: "Documentary Title" %>
-  <%= f.input :description %>
+  <%= f.input :description, label: "Storyline" %>
   <%= f.input :director, label: "Director(s)" %>
   <%= f.button :submit %>
 <% end %>

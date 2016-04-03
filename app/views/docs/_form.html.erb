@@ -2,7 +2,7 @@
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %>
   <%= f.file_field :doc_img %>
   <%= f.input :title, label: "Documentary Title" %>
-  <%= f.input :description %>
-  <%= f.input :director, label: "Director(s)" %>
+  <%= f.input :description, label: "Storyline" %>
+  <%= f.input :director, label: "Directed by" %>
   <%= f.button :submit %>
 <% end %>
