@@ -50,7 +50,7 @@ class DocsController < ApplicationController
   private
 
     def doc_params
-      params.require(:doc).permit(:title, :description, :director, :category_id)
+      params.require(:doc).permit(:title, :description, :director, :category_id, :doc_img)
     end
 
     def find_doc

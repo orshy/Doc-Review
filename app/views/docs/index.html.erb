@@ -1,3 +1,12 @@
-<% @docs.each do |doc| %>
-<h2><%= link_to doc.title, doc_path(doc) %></h2>
+<h3 class="current-category"><%= params[:category] %></h3>
+<% if @docs.count == 0 %>
+<h4>There are no docs in this category.</h4>
+
+<% else %>
+  <% @docs.each do |doc| %>
+    <a href="/docs/<%= doc.id %>">
+      <%= image_tag doc.doc_img.url(:doc_index) %>
+    </a>
+  <% end %>
+
 <% end %>
