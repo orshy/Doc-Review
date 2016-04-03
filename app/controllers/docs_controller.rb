@@ -2,7 +2,12 @@ class DocsController < ApplicationController
   before_action :find_doc, only: [:show, :edit, :update, :destroy]
 
   def index
+    if params[:category].blank?
     @docs = Doc.all.order("created_at DESC")
+  else
+    @category_id = Category.find_by(name: params[:category]).id
+    @docs = Doc.where(:category_id => @category_id).order("created_at DESC")
+  end
   end
 
   def show
