@@ -10,10 +10,12 @@ class DocsController < ApplicationController
 
   def new
     @doc = current_user.docs.build
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @doc = current_user.docs.build(doc_params)
+    @doc.category_id = params[:category_id]
 
     if @doc.save
       redirect_to root_path
@@ -23,9 +25,11 @@ class DocsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @doc.category_id = params[:category_id]
     if @doc.update(doc_params)
       redirect_to doc_path(@doc)
     else
@@ -41,7 +45,7 @@ class DocsController < ApplicationController
   private
 
     def doc_params
-      params.require(:doc).permit(:title, :description, :director)
+      params.require(:doc).permit(:title, :description, :director, :category_id)
     end
 
     def find_doc

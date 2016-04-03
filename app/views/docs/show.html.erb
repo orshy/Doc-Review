@@ -1,7 +1,16 @@
-<h2><%= @doc.title %></h2>
-<h4><%= @doc.director %></h4>
+<h1><%= @doc.title %></h1>
+<h3><%= @doc.director %></h3>
+<h4>Category: <%= @doc.category.name %></h4>
 <h5><%= @doc.description %></h5>
 
 <%= link_to "Back", root_path(@doc) %>
-<%= link_to "Edit", edit_doc_path(@doc) %>
-<%= link_to "Delete", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% if user_signed_in? %>
+
+  <% if @doc.user_id == current_user.id %>
+
+    <%= link_to "Edit", edit_doc_path(@doc) %>
+    <%= link_to "Delete", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?" } %>
+
+  <% end %>
+<% end %>
