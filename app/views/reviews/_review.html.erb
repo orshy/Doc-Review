@@ -1,4 +1,4 @@
-<p><%= review.rating %></p>
+<div class="review-rating" data-score="<%= review.rating %>"></div>
 <p><%= review.comment %></p>
 
 <% if user_signed_in? %>
@@ -7,5 +7,6 @@
 
     <%= link_to "Edit", edit_doc_review_path(review.doc, review) %>
     <%= link_to "Delete", doc_review_path(review.doc, review), method: :delete, data: { confirm: "Are you sure?"} %>
+
   <% end %>
 <% end %>

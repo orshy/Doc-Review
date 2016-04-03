@@ -1,5 +1,6 @@
 class DocsController < ApplicationController
   before_action :find_doc, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     if params[:category].blank?
@@ -11,6 +12,11 @@ class DocsController < ApplicationController
   end
 
   def show
+    if @doc.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @doc.reviews.average(:rating).round(2)
+    end
   end
 
   def new

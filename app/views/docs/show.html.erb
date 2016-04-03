@@ -8,6 +8,9 @@
   <div class="col-md-8">
     <h1><%= @doc.title %></h1><hr>
     <h4>Directed by <%= @doc.director %></h4><br>
+    <h3>Average Rating</h3>
+    <div class="average-review-rating" data-score=<%= @average_review %>></div>
+    <span><%= @doc.reviews.count %> reviews</span>
     <div class="well">
       <h5>Storyline</h5>
       <p><%= @doc.description %></p>
@@ -19,7 +22,7 @@
 
 <div class="row">
   <div class="col-md-4">
-    
+
     <%= render @doc.reviews %>
 
     <div>
@@ -40,4 +43,25 @@
     <%= link_to "Delete", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?" } %>
 
   <% end %>
+
 <% end %>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
+
+<script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>
