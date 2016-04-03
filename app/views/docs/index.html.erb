@@ -3,10 +3,19 @@
 <h4>There are no docs in this category.</h4>
 
 <% else %>
-  <% @docs.each do |doc| %>
-    <a href="/docs/<%= doc.id %>">
-      <%= image_tag doc.doc_img.url(:doc_index) %>
-    </a>
-  <% end %>
+
+  <div class="row">
+
+    <% @docs.each do |doc| %>
+
+      <div class="col-md-3">
+        <a href="/docs/<%= doc.id %>">
+          <%= image_tag doc.doc_img.url(:doc_index), class: "doc" %>
+        </a>
+      </div>
+
+    <% end %>
+
+  </div>
 
 <% end %>

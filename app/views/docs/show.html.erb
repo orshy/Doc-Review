@@ -1,7 +1,26 @@
-<h1><%= @doc.title %></h1>
-<h3><%= @doc.director %></h3>
-<h4>Category: <%= @doc.category.name %></h4>
-<h5><%= @doc.description %></h5>
+<div class="row">
+
+  <div class="col-md-4">
+    <%= image_tag @doc.doc_img.url(:doc_show), class: "doc-show" %>
+  </div>
+
+  <div class="col-md-8">
+    <h1><%= @doc.title %></h1>
+    <h3><%= @doc.director %></h3>
+    <p><%= @doc.description %></p>
+  </div>
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+
+    <!-- Home for review/ratings -->
+
+  </div>
+
+</div>
 
 <%= link_to "Back", root_path(@doc) %>
 
