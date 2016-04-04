@@ -30,6 +30,10 @@
 
 /* General styles */
 
+hr {
+  border-color: black;
+}
+
 body {
 	background-color: #f5f5f5;
 	font-family: 'Lora', serif;
@@ -52,7 +56,7 @@ p.alert, p.notice {
 	text-transform: uppercase;
 }
 .navbar-default {
-	background-color: #fff;
+	background-color: #EDB;
 	padding-bottom: 5px;
 	padding-top: 5px;
 
@@ -102,7 +106,7 @@ p.alert, p.notice {
 	font-family: 'Ubuntu', sans-serif;
 	&:hover {
 		text-decoration: none;
-		background-color: darken(#f1c40f, 5%);
+		background-color: darken(#a5c3d0, 5%);
 		color: #fff;
 		transition: 0.5s;
 	}
@@ -149,7 +153,8 @@ p.alert, p.notice {
 	width: 250px;
 	margin-bottom: 40px;
 	@include background-tile;
-	background-color: #FFE;
+	background-color: #f5f5f5;
+	border-radius: 5px;
 }
 
 .doc-show {
