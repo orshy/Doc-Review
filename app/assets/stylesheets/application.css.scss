@@ -334,16 +334,48 @@ p.alert, p.notice {
 //     width: 50%;
 // 	}
 // }
+// @media screen and (max-width: 767px) {
+// 	.doc {
+// 		margin: auto;
+//     height: 50%;
+//     width: 50%;
+// 	}
+// }
+@media screen and (max-width: 1200px) {
+	.doc-info {
+		margin-left: 50px;
+	}
+}
+@media screen and (max-width: 991px) {
+.doc-info {
+	margin: auto;
+	width: 100%;
+	}
+}
 @media screen and (max-width: 767px) {
-	.doc {
+	.doc-info {
+		margin: auto;
+    width: 100%;
+	}
+}
+@media screen and (max-width: 767px) {
+	.doc-show {
 		margin: auto;
     height: 50%;
     width: 50%;
 	}
 }
-
 @media screen and (max-width: 991px) {
 	.doc-show {
+		margin: auto;
+		display:block;
+    height: 50%;
+    width: 50%;
+		margin-bottom: 40px
+	}
+}
+@media screen and (max-width: 767px) {
+	.doc {
 		margin: auto;
     height: 50%;
     width: 50%;
