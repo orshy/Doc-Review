@@ -327,6 +327,13 @@ p.alert, p.notice {
 	}
 }
 //Ipad fix. Heroku server is sloww.
+// @media screen and (max-width: 767px) {
+// 	.doc {
+// 		margin: auto;
+//     height: 50%;
+//     width: 50%;
+// 	}
+// }
 @media screen and (max-width: 767px) {
 	.doc {
 		margin: auto;
