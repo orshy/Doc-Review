@@ -153,15 +153,22 @@ p.alert, p.notice {
 	height: 350px;
 	width: 250px;
 	margin-bottom: 40px;
-	@include background-tile;
-	background-color: #f5f5f5;
+	box-sizing: border-box;
+	background-color: #fff;
 	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	border-radius: 5px;
+	padding: 0.4em -0.75em;
 }
 
 .doc-show {
 	height: 475px;
 	width: 325px;
-	@include background-tile;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+	padding: 0.4em -0.75em;
 }
 
 .doc-info {
@@ -321,16 +328,31 @@ p.alert, p.notice {
 	}
 }
 
-@media only screen and (max-width: 1200px) {
-  .doc{
-    height: 295px;
-  }
-}
-
-@media only screen and (max-width: 770px) {
+// Media Queries
+// @media only screen and (max-width: 1200px) {
+//   .doc{
+//     height: 350px;
+//   }
+// }
+// @media only screen and (max-width: 991px) {
+// 	.doc {
+// 		margin: auto;
+//     height: 70%;
+//     width: 70%;
+// 	}
+// }
+@media only screen and (max-width: 768px) {
 	.doc {
 		margin: auto;
-    height: 75%;
-    width: 75%;
+    height: 45%;
+    width: 45%;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.doc-show {
+		margin: auto;
+    height: 55%;
+    width: 55%;
 	}
 }
