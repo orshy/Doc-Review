@@ -326,12 +326,12 @@ p.alert, p.notice {
 		margin-top: 0;
 	}
 }
-
+//Ipad fix.
 @media screen and (max-width: 767px) {
 	.doc {
 		margin: auto;
-    height: 45%;
-    width: 45%;
+    height: 50%;
+    width: 50%;
 	}
 }
 
