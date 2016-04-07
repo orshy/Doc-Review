@@ -327,7 +327,7 @@ p.alert, p.notice {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 	.doc {
 		margin: auto;
     height: 45%;
@@ -338,7 +338,7 @@ p.alert, p.notice {
 @media screen and (max-width: 991px) {
 	.doc-show {
 		margin: auto;
-    height: 55%;
-    width: 55%;
+    height: 50%;
+    width: 50%;
 	}
 }
