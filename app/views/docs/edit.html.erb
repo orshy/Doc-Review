@@ -1,0 +1,18 @@
+<div class="col-md-6 col-md-offset-3">
+
+  <div class="edit-doc-form">
+
+    <h2>Edit Doc</h2>
+
+    <%= simple_form_for @doc, :html => { :multipart => true } do |f| %>
+      <%= f.select :category_id, @categories %>
+      <%= f.file_field :doc_img %>
+      <%= f.input :title, label: "Documentary Title" %>
+      <%= f.input :description, label: "Storyline" %>
+      <%= f.input :director, label: "Director(s)" %>
+      <%= f.button :submit, :class => "btn-custom2" %>
+    <% end %>
+
+  </div>
+
+</div>

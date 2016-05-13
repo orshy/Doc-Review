@@ -1,0 +1,21 @@
+<h3 class="current-category"><%= params[:category] %></h3>
+<% if @docs.count == 0 %>
+<h4>There are no docs in this category.</h4>
+
+<% else %>
+
+  <div class="row-fluid">
+
+    <% @docs.each do |doc| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <a href="/docs/<%= doc.id %>">
+          <%= image_tag doc.doc_img.url(:doc_index), class: "doc img-responsive" %>
+        </a><br>
+      </div>
+
+    <% end %>
+
+  </div>
+
+<% end %>

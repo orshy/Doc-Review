@@ -1,0 +1,8 @@
+<%= simple_form_for @doc, :html => { :multipart => true } do |f| %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Category") %>
+  <%= f.file_field :doc_img %>
+  <%= f.input :title, label: "Documentary Title" %>
+  <%= f.input :description, label: "Storyline" %>
+  <%= f.input :director, label: "Directed by" %>
+  <%= f.button :submit, :class => 'btn-custom2' %>
+<% end %>

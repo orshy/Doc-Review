@@ -1,0 +1,82 @@
+<div class="row">
+
+  <div class="col-md-4">
+    <%= image_tag @doc.doc_img.url(:doc_show), class: "doc-show" %>
+  </div>
+
+
+  <div class="col-md-8">
+
+    <div class="doc-info">
+
+      <h2 class="doc-title"><%= @doc.title %></h2><hr>
+      <h4 class="doc-director">Directed by <%= @doc.director %></h4>
+      <h2 class="avg-rating">Average Rating</h2>
+      <div class="average-review-rating" data-score=<%= @average_review %>></div>
+      <span class="number-of-reviews"><%= @doc.reviews.count %> reviews</span>
+      <br><br>
+      <h4>Storyline</h4>
+      <p class-"doc-description"><%= @doc.description %></p>
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+    <div class="reviews">
+
+      <h3>Reviews</h3>
+      <%= render @doc.reviews %>
+
+      <div>
+        <%= link_to "Add Review", new_doc_review_path(@doc), class: "btn-custom" %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="links btn-group">
+
+  <!-- <%= link_to "Back", root_path, class: "btn btn-custom" %> -->
+
+  <% if user_signed_in? %>
+
+    <% if @doc.user_id == current_user.id %>
+
+      <%= link_to "Edit", edit_doc_path(@doc), class: "btn btn-custom" %>
+      <%= link_to "Delete", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+
+    <% end %>
+
+  <% end %>
+
+</div>
+
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
+
+<script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>
