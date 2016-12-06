@@ -1,1 +1,3 @@
+Doc review is documentary movie review website. Who doesn't love finding and reviewing new documentaries?
 
+This application is made with Ruby on Rails, erb for view files, Sass, and SQLite/Postgresql.
